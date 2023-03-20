@@ -35,12 +35,16 @@ class AuthController extends Controller
             'password' => 'required'
         ]);
         if ($validator->fails()) {
-            return redirect('/admin-login')
+            return redirect('/login')
                 ->withErrors($validator)
                 ->withInput();
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
-            return redirect()->route('dashboard');
+            if (Auth::user()->hasRole("admin")) {
+                return redirect()->route('dashboard');
+            } else {
+                return redirect()->back()->with("error", "You are not authorised for this action");
+            }
         }
         return back()->withInput($request->only('email', 'remember'));
     }
