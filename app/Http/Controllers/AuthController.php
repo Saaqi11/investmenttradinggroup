@@ -41,7 +41,7 @@ class AuthController extends Controller
         }
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password], $request->get('remember'))) {
             if (Auth::user()->hasRole("admin")) {
-                return redirect()->route('dashboard');
+                return redirect()->route('admin.dashboard');
             } else {
                 return redirect()->back()->with("error", "You are not authorised for this action");
             }
