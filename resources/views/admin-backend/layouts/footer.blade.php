@@ -5,7 +5,7 @@
             <div class="card shadow-lg blur">
                 <div class="card-header pb-0 pt-3  bg-transparent ">
                     <div class="float-start">
-                        <h5 class="mt-3 mb-0">Pinzzit Configurator</h5>
+                        <h5 class="mt-3 mb-0">Investment Trading Group Configurator</h5>
                         <p>See our dashboard options.</p>
                     </div>
                     <div class="float-end mt-4">
@@ -80,6 +80,7 @@
         </script>
         <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins/choices.min.js') }}"></script>
+        <script src="{{ asset('assets/js/plugins/datatables.js') }}"></script>
         <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
         <script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
@@ -90,6 +91,14 @@
         <script src="{{ asset('assets/js/plugins/orbit-controls.js') }}"></script>
         <script async defer src="{{ asset('buttons.github.io/buttons.js') }}"></script>
         <script src="{{ asset('assets/js/soft-ui-dashboard.min21cd.js?v=1.0.9') }}"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
 {{--        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"754fe6e12bd5a036","token":"1b7cbb72744b40c580f8633c6b62637e","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>--}}
     </body>
 </html>

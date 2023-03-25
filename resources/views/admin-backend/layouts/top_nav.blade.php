@@ -10,16 +10,17 @@
             </a>
         </div>
         @include('admin-backend.layouts.breadcrumbs')
-        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+        <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4 d-flex align-items-center justify-content-center" id="navbar">
             <div class="ms-md-auto pe-md-3 d-flex align-items-center">
             </div>
             <ul class="navbar-nav  justify-content-end">
                 <li class="nav-item d-flex align-items-center">
                     <i class="fal fa-user me-sm-1"></i>
-                    <span class="d-sm-inline d-none"> Hello {{ \Illuminate\Support\Facades\Auth::user()->name }}</span>
+                    Hello! <a href="{{ route("admin.profile") }}"> &nbsp; &nbsp;  {{ \Illuminate\Support\Facades\Auth::user()->name }}</a>
                 </li>
+
                 <li class="nav-item d-flex align-items-center " style="margin-left: 15px">
-                    <a id="logoutBtn" class=" nav-link text-body font-weight-bold px-0" target="_blank">
+                    <a id="logoutBtn" target="_blank">
                         <span class="d-sm-inline d-none"> Logout</span>
                     </a>
                 </li>
