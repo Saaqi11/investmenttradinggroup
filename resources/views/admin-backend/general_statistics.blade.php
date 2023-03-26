@@ -546,6 +546,7 @@
                                     <li><a class="dropdown-item" href="javascript:;">Yesterday</a></li>
                                     <li><a class="dropdown-item" href="javascript:;">Last 7 days</a></li>
                                     <li><a class="dropdown-item" href="javascript:;">Last 30 days</a></li>
+                                    <li><a class="dropdown-item" href="javascript:;">Last <input type="number" value="90" style="width: 70px"> days</a></li>
                                 </ul>
                             </div>
                         </div>

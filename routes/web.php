@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
+Route::get('/', [PublicController::class, 'index'])->name('index');
+Route::get('/get-membership', [PublicController::class, 'getMembership'])->name('get-membership');
 Route::get('/admin-login', [AuthController::class, 'adminLoginPage'])->name('login');
 Route::post('/do-admin-login', [AuthController::class, 'doAdminLogin'])->name('do.login');
 Route::get('/do-admin-logout', [AuthController::class, 'doLogout'])->name('logout');

@@ -11,7 +11,7 @@
                     <div class="icon-sm icon shadow border-radius-md text-center d-flex align-items-center justify-content-center  me-2">
                         <i class="fal fa-tachometer-alt-fast"></i>
                     </div>
-                    <span class="nav-link-text ms-1">Dashboards</span>
+                    <span class="nav-link-text ms-1">Sales</span>
                 </a>
             </li>
             <li class="nav-item">
