@@ -25,6 +25,7 @@ Route::get('/do-admin-logout', [AuthController::class, 'doLogout'])->name('logou
 
 
 Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->group( function () {
+
     Route::get('/sales', [AdminController::class, 'sales'])->name('sales');
     Route::get('/coupons', [AdminController::class, 'couponsListing'])->name('coupons');
     Route::get('/pricing', [AdminController::class, 'pricingListing'])->name('pricing');
@@ -33,4 +34,5 @@ Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->g
     Route::get('/homepage', [AdminController::class, 'homepage'])->name('homepage');
     Route::get('/email', [AdminController::class, 'email'])->name('email');
     Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+//    Route::get('/dashboard', [AdminController::class, 'dashboard'])->name('dashboard');
 });
