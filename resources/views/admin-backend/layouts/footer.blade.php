@@ -1,4 +1,7 @@
-        <div class="fixed-plugin">
+
+
+        @if(request()->route()->action['as'] !== "admin.homepage.addSection" && request()->route()->action['as'] !== "admin.homepage.editSection")
+            <div class="fixed-plugin">
             <a class="fixed-plugin-button text-dark position-fixed px-3 py-2">
                 Change Theme Style
             </a>
@@ -66,6 +69,7 @@
                 </div>
             </div>
         </div>
+        @endif
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script>
             $("#logoutBtn").on("click", function () {
@@ -78,27 +82,42 @@
                 });
             });
         </script>
-        <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/choices.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/datatables.js') }}"></script>
-        <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/dragula/dragula.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/jkanban/jkanban.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/threejs.js') }}"></script>
-        <script src="{{ asset('assets/js/plugins/orbit-controls.js') }}"></script>
-        <script async defer src="{{ asset('buttons.github.io/buttons.js') }}"></script>
-        <script src="{{ asset('assets/js/soft-ui-dashboard.min21cd.js?v=1.0.9') }}"></script>
-        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
-        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
-{{--        <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v652eace1692a40cfa3763df669d7439c1639079717194" integrity="sha512-Gi7xpJR8tSkrpF7aordPZQlW2DLtzUlZcumS8dMQjwDHEnw9I7ZLyiOj/6tZStRBGtGgN6ceN6cMH8z7etPGlw==" data-cf-beacon='{"rayId":"754fe6e12bd5a036","token":"1b7cbb72744b40c580f8633c6b62637e","version":"2022.8.1","si":100}' crossorigin="anonymous"></script>--}}
+
+        @if(request()->route()->action['as'] === "admin.homepage.addSection" || request()->route()->action['as'] === "admin.homepage.editSection")
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+            <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/aes.js"></script>
+            <script src="{{ asset("assets/js/beautify-web/beautify-html.js") }}"></script>
+            <script src="{{ asset("assets/js/beautify-web/beautify-css.js") }}"></script>
+            <script src="{{ asset("assets/js/beautify-web/beautify.js") }}"></script>
+            <script src="{{ asset("assets/js/ace/ace.js") }}" type="text/javascript" charset="utf-8"></script>
+            <script src="{{ asset("assets/js/ace/ext-language_tools.js") }}" type="text/javascript" charset="utf-8"></script>
+            <script src="https://togetherjs.com/togetherjs-min.js"></script>
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+            <script src="{{ asset("assets/js/jstinker.js") }}"></script>
+        @else
+            <script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/choices.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/datatables.js') }}"></script>
+            <script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/smooth-scrollbar.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/dragula/dragula.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/jkanban/jkanban.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/threejs.js') }}"></script>
+            <script src="{{ asset('assets/js/plugins/orbit-controls.js') }}"></script>
+            <script async defer src="{{ asset('buttons.github.io/buttons.js') }}"></script>
+            <script src="{{ asset('assets/js/soft-ui-dashboard.min21cd.js?v=1.0.9') }}"></script>
+            <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+            <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+            <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+            <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+        @endif
+        <script src="{{ asset("assets/js/toastr.min.js") }}"></script>
+
     </body>
 </html>
