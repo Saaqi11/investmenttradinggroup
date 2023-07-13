@@ -6,7 +6,7 @@
                 <h1>SOMTHING COOL TO SAY</h1>
                 <p>Something intersting</p>
                 <div class="btn-holder">
-                    <a href="{{ route("get-membership") }}" class="btn">Become a member</a>
+                    <a href="#payment-block" class="btn">Become a member</a>
                 </div>
             </div>
             <div class="image-holder">
@@ -17,7 +17,7 @@
     <section class="testimonial-block">
         <div class="container">
             <div class="text-holder">
-                <h2>Testemonials</h2>
+                <h2>Testimonials</h2>
                 <p>What our members are saying</p>
             </div>
             <div class="banner-slider">
@@ -26,8 +26,8 @@
                         <img src="" alt="">
                     </div>
                     <div class="text-holder">
-                        <p>Dramtically maintain clicks- and-mortar solutions without functgional solutions.</p>
-                        <p>Completely synergize resource taxing relationship via premier niche markets. Professionally cultivate.</p>
+                        <p>Dramatically maintain clicks- and-mortar solutions without functional solutions.</p>
+                        <p>Completely synerize resource taxing relationship via premier niche markets. Professionally cultivate.</p>
                     </div>
                     <div class="btn-holder">
                         <a href="#" class="btn">LARAATKINSON</a>
@@ -195,7 +195,7 @@
             </div>
         </div>
     </section>
-    <section class="grading-block">
+    <section class="grading-block" id="payment-block">
         <div class="container">
             <div class="text-holder">
                 <h2>Cancel, upgrade, or downgrade anytime</h2>
@@ -213,7 +213,7 @@
                         <li>
                             <span>-</span>
                             <div class="button">
-                                <a href="#" class="btn">Get Started</a>
+                                <a href="{{ route("get-membership", ['subscription' => 'l1']) }}" class="btn">Get Started</a>
                             </div>
                         </li>
                     </ul>
@@ -230,7 +230,7 @@
                         <li>
                             <span>-</span>
                             <div class="button">
-                                <a href="#" class="btn">Better Value</a>
+                                <a href="{{ route("get-membership", ['subscription' => 'l2']) }}" class="btn">Better Value</a>
                             </div>
                         </li>
                     </ul>
@@ -247,7 +247,7 @@
                         <li>
                             <span>-</span>
                             <div class="button">
-                                <a href="#" class="btn">Even better Value</a>
+                                <a href="{{ route("get-membership", ['subscription' => 'l3']) }}" class="btn">Even better Value</a>
                             </div>
                         </li>
                     </ul>
@@ -255,7 +255,7 @@
                 <div class="col">
                     <ul class="grades">
                         <li class="heading">Level 4</li>
-                        <li><span class=year-wrap><span class="amount">$</span>2.99</span> per month</li>
+                        <li><span class=year-wrap><span class="amount">$</span>8.99</span> per month</li>
                         <li>Abc:Unimited*</li>
                         <li>DEF:Unimited*</li>
                         <li>HIG:Unimited*</li>
@@ -264,7 +264,7 @@
                         <li>
                             <span>OTHER:Unimited*</span>
                             <div class="button">
-                                <a href="#" class="btn">Most Value</a>
+                                <a href="{{ route("get-membership", ['subscription' => 'l4']) }}" class="btn">Most Value</a>
                             </div>
                         </li>
                     </ul>

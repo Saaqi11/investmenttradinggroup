@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,10 +19,16 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
-Route::get('/get-membership', [PublicController::class, 'getMembership'])->name('get-membership');
+Route::get('/get-membership/{subscription}', [PublicController::class, 'getMembership'])->name('get-membership');
 Route::get('/admin-login', [AuthController::class, 'adminLoginPage'])->name('login');
+Route::get('/user-login', [PublicController::class, 'doLogin'])->name('user-login');
 Route::post('/do-admin-login', [AuthController::class, 'doAdminLogin'])->name('do.login');
-Route::get('/do-admin-logout', [AuthController::class, 'doLogout'])->name('logout');
+Route::get('/do-logout', [AuthController::class, 'doLogout'])->name('logout');
+Route::get('/paypal-checkout/{subscription}', [PublicController::class, 'paypalCheckout'])->name('paypal-checkout');
+Route::get('/payment-success/{data}', [PublicController::class, 'paypalSuccess'])->name('paypal-success');
+Route::get('/paypal-error', [PublicController::class, 'paypalError'])->name('paypal-error');
+Route::post('/user-signup/{subscription}', [PublicController::class, 'userSignup'])->name('user-signup');
+Route::post('/user-signup/{subscription}', [PublicController::class, 'userSignup'])->name('user-signup');
 
 
 Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->group( function () {
@@ -42,4 +49,8 @@ Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->g
     });
     Route::get('/email', [AdminController::class, 'email'])->name('email');
     Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+});
+Route::prefix("user")->name("user.")->middleware(['auth:web','checkPaymentStatus'])->group( function () {
+    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+    Route::get('/re-subscription', [PublicController::class, 'reSubscription'])->name('re-subscription');
 });

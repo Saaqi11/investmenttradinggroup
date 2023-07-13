@@ -1,5 +1,8 @@
 <header class="header">
     <div class="container">
+        @if(isset($loginError))
+            <span class="alert alert-danger">{{$loginError}}</span>
+        @endif
         <strong class="logo">
             <a href="#" class="btn-logo">ITG</a>
         </strong>
@@ -10,26 +13,23 @@
                     <h2>Member login</h2>
                     <p>Subscribe to become a member</p>
                 </div>
-                <form class="form-area">
+                <form class="form-area" method="post" action="{{ route("login") }}">
+                    @csrf
                     <div class="field">
                         <label>Email *</label>
-                        <input type="text" placeholder="email@address.com">
+                        <input type="text" name="email" placeholder="email@address.com">
                     </div>
                     <div class="field">
                         <div class="label-wrap">
                             <label>Password *</label>
                             <span class="text">Reset Password</span>
                         </div>
-                        <input type="password" placeholder="*************">
-                    </div>
-                    <div class="form-check mb-2 custom-control custom-checkbox">
-                        <input type="checkbox" id="checkterms" class="custom-control-input form-check-input mr-2" required="">
-                        <label for="checkterms" class="custom-control-label">Remember me</label>
+                        <input type="password" name="password" placeholder="*************">
                     </div>
                 </form>
                 <div class="button-area">
                     <a href="#" class="btn">cancel</a>
-                    <a href="#" class="btn">Login</a>
+                    <button href="#" type="submit" class="btn">Login</button>
                 </div>
             </div>
         </div>

@@ -1,6 +1,8 @@
 @include('public-layout.header')
     <div id="wrapper">
-        @include("public-layout.top_bar")
+        @if(!auth()->user())
+            @include("public-layout.top_bar")
+        @endif
         @if(Session::has('message'))
             <div class="alert alert-success alert-dismissible text-white" role="alert">
                 {{ Session::get('message') }}
