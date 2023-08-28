@@ -11,6 +11,7 @@
                     </button>
                 </div>
             @endif
+            @include('admin-backend.layouts.flashmessages')
             @yield('content')
         </div>
         <footer class="footer pt-3 mb-4">

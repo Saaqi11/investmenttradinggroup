@@ -76,12 +76,27 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('admin.email') }}" class="nav-link {{ request()->route()->action['prefix'] == 'admin/email' ? "active" : '' }}">
+                    <a class="nav-link {{ request()->route()->action['prefix'] == 'admin/email' ? "active" : '' }}" href="#email-sub-menu" aria-controls="email-sub-menu" role="button" aria-expanded="false" data-bs-toggle="collapse">
                         <div class="icon-sm icon shadow border-radius-md text-center d-flex align-items-center justify-content-center  me-2">
                             <i class="fal fa-mail-bulk"></i>
                         </div>
                         <span class="nav-link-text ms-1">Email</span>
                     </a>
+                    <div class="collapse {{ request()->route()->action['prefix'] == 'admin/email' ? "show" : '' }} " id="email-sub-menu">
+                        <ul class="nav ms-4 ps-3">
+                            <li class="nav-item {{ request()->route()->action['as'] == 'admin.pages.email.listings' ? "active" : '' }}">
+                                <a class="nav-link" href="{{ route('admin.email.emailListings') }}">
+                                    <span class="sidenav-normal"> Email Listings </span>
+                                </a>
+                            </li>
+                            <li class="nav-item {{ request()->route()->action['as'] == 'admin.pages.email.sendemail' ? "active" : '' }}">
+                                <a class="nav-link " href="{{ route('admin.email.sendEmail') }}">
+                                    <span class="sidenav-mini-icon"> A </span>
+                                    <span class="sidenav-normal"> Send Emails </span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
                 </li>
             </ul>
         </div>

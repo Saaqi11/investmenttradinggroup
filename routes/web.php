@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\EmailController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\UserController;
@@ -29,7 +30,7 @@ Route::get('/payment-success/{data}', [PublicController::class, 'paypalSuccess']
 Route::get('/paypal-error', [PublicController::class, 'paypalError'])->name('paypal-error');
 Route::post('/user-signup/{subscription}', [PublicController::class, 'userSignup'])->name('user-signup');
 Route::post('/user-signup/{subscription}', [PublicController::class, 'userSignup'])->name('user-signup');
-
+Route::get('send/mail', [EmailController::class, 'sendMail'])->name('sendMail');
 
 Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->group( function () {
     Route::get('/sales', [AdminController::class, 'sales'])->name('sales');
@@ -47,10 +48,17 @@ Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->g
         Route::put('/update-section-status/{id}', [AdminController::class, 'updateSectionStatus'])->name('updateSectionStatus');
         Route::put('/update-section-order/{id}', [AdminController::class, 'updateSectionOrder'])->name('updateSectionOrder');
     });
-    Route::get('/email', [AdminController::class, 'email'])->name('email');
+    Route::prefix("email")->name("email.")->group(function () {
+        Route::get('/show', [EmailController::class, 'emailListings'])->name('emailListings');
+        Route::get('/send', [EmailController::class, 'sendEmail'])->name('sendEmail');
+        Route::post('/store', [EmailController::class, 'storeEmail'])->name('storeEmail');
+    });
+    
     Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
 });
 Route::prefix("user")->name("user.")->middleware(['auth:web','checkPaymentStatus'])->group( function () {
     Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
     Route::get('/re-subscription', [PublicController::class, 'reSubscription'])->name('re-subscription');
 });
+
+

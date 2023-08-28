@@ -118,6 +118,8 @@
             <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
         @endif
         <script src="{{ asset("assets/js/toastr.min.js") }}"></script>
+        <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
 
     </body>
 </html>

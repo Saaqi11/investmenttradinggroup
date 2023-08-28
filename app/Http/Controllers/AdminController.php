@@ -8,6 +8,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\View\View;
+use App\Models\Payment;
 
 class AdminController extends Controller
 {
@@ -168,6 +169,13 @@ class AdminController extends Controller
         } else {
             return false;
         }
+    }
+
+    public function pricingListing()
+    {
+        $payments = Payment::all();
+
+        return view('admin-backend.pages.payment.listings', compact('payments'));
     }
 
 }

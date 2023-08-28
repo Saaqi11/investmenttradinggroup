@@ -1,0 +1,97 @@
+.send-email-page form label{
+    font-size: 16px;
+    color: #89660b;
+}
+.send-email-page form label:not(.recipients label){
+    width: 20%;
+}
+.send-email-page form .form-control:focus {
+    border-color: #89660b !important;
+    box-shadow: 0 0 5px rgba(137, 102, 11, 0.5)
+}
+.send-email-page form .form-control{
+    width: 80%;
+}
+.send-email-page form .recipients h2{
+    display: inline
+}
+.send-email-page .memberships-checkbox{
+    display: flex;
+    flex-flow: column;
+}
+.send-email-page .recipients label:not(.recipients-label > label){
+    color: #a77a23 !important;
+    font-weight: 400
+}
+.send-email-page .recipients {
+    display: flex;
+}
+.send-email-page .recipients-label{
+    width: 20%;
+}
+.send-email-page .select-all-checkbox{
+    width: 15%;
+}
+.send-email-page .recipients > .divider{
+    width: 15%;
+}
+.send-email-page #attachment{
+    width: 100% !important;
+} 
+
+.send-email-page .ck-editor__editable_inline {
+  min-height: 200px;
+  direction: ltr !important;
+}
+.send-email-page .ck-editor__editable_inline p{
+  color: #000;
+  text-transform: initial !important;
+  text-align: left;
+  letter-spacing: initial;
+}
+
+.send-email-page .recipients input:checked:after{
+    content: none
+}
+
+.draggable-table tbody tr td{
+    text-indent: 15px;
+}
+.download-attachment-btn {
+    width: 100px;
+    background-color: #89660b;
+    border-color: #89660b;
+    color: #fff !important;
+    padding: 7px 10px;
+    border-radius: 10px;
+}
+
+.email-pagination nav{
+    text-align: center;
+}
+.email-pagination nav > div:first-child{
+    display: none;
+}
+.email-pagination nav > div svg{
+    height: 30px;
+    fill: #a77a23;
+}
+
+.payment-listings > .col-lg-12, main:has(.payment-listings) .navbar > div{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+}
+.card .card-body, .card .card-header{
+    padding-left: 0 !important;
+
+    }
+.card .card-header > div{
+    margin: 0;
+}
+.payment-listings .draggable-table tbody tr td {
+    text-indent: 5px;
+}
+.payment-listings .table thead th{
+    padding-left: 15px;
+    padding-right: 15px;
+}
