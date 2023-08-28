@@ -19,3 +19,4 @@ yarn-error.log
 /.vscode
 /phpmyadmin
 /dist
+/email-attachments

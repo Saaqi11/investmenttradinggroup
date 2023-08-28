@@ -35,7 +35,7 @@ Route::get('send/mail', [EmailController::class, 'sendMail'])->name('sendMail');
 Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->group( function () {
     Route::get('/sales', [AdminController::class, 'sales'])->name('sales');
     Route::get('/coupons', [AdminController::class, 'couponsListing'])->name('coupons');
-    Route::get('/pricing', [AdminController::class, 'pricingListing'])->name('pricing');
+    Route::get('/pricing', [AdminController::class, 'paymentListing'])->name('pricing');
     Route::get('/support', [AdminController::class, 'support'])->name('support');
     Route::get('/register', [AdminController::class, 'register'])->name('register');
     Route::prefix("homepage")->name("homepage.")->group(function () {
@@ -53,7 +53,7 @@ Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->g
         Route::get('/send', [EmailController::class, 'sendEmail'])->name('sendEmail');
         Route::post('/store', [EmailController::class, 'storeEmail'])->name('storeEmail');
     });
-    
+
     Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
 });
 Route::prefix("user")->name("user.")->middleware(['auth:web','checkPaymentStatus'])->group( function () {

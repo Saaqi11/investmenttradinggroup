@@ -171,9 +171,9 @@ class AdminController extends Controller
         }
     }
 
-    public function pricingListing()
+    public function paymentListing()
     {
-        $payments = Payment::all();
+        $payments = Payment::paginate(10);;
 
         return view('admin-backend.pages.payment.listings', compact('payments'));
     }
