@@ -16,14 +16,14 @@
                         <span class="nav-link-text ms-1">Sales</span>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('admin.coupons') }}" class="nav-link {{ request()->route()->uri == 'admin/coupons' ? "active" : '' }}">
-                        <div class="icon-sm icon shadow border-radius-md text-center d-flex align-items-center justify-content-center  me-2">
-                            <i class="fal fa-gift" aria-hidden="true"></i>
-                        </div>
-                        <span class="nav-link-text ms-1">Coupons</span>
-                    </a>
-                </li>
+{{--                <li class="nav-item">--}}
+{{--                    <a href="{{ route('admin.coupons') }}" class="nav-link {{ request()->route()->uri == 'admin/coupons' ? "active" : '' }}">--}}
+{{--                        <div class="icon-sm icon shadow border-radius-md text-center d-flex align-items-center justify-content-center  me-2">--}}
+{{--                            <i class="fal fa-gift" aria-hidden="true"></i>--}}
+{{--                        </div>--}}
+{{--                        <span class="nav-link-text ms-1">Coupons</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 <li class="nav-item">
                     <a href="{{ route('admin.pricing') }}" class="nav-link {{ request()->route()->uri == 'admin/pricing' ? "active" : '' }}">
                         <div class="icon-sm icon shadow border-radius-md text-center d-flex align-items-center justify-content-center  me-2">
@@ -32,14 +32,25 @@
                         <span class="nav-link-text ms-1">Pricing</span>
                     </a>
                 </li>
+
+{{--                <li class="nav-item">--}}
+{{--                    <a href="{{ route('admin.support') }}" class="nav-link {{ request()->route()->uri == 'admin/support' ? "active" : '' }}">--}}
+{{--                        <div class="icon-sm icon shadow border-radius-md text-center d-flex align-items-center justify-content-center  me-2">--}}
+{{--                            <i class="fal fa-info-circle"></i>--}}
+{{--                        </div>--}}
+{{--                        <span class="nav-link-text ms-1">Support</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
+
                 <li class="nav-item">
-                    <a href="{{ route('admin.support') }}" class="nav-link {{ request()->route()->uri == 'admin/support' ? "active" : '' }}">
+                    <a href="{{ route('admin.payments') }}" class="nav-link {{ request()->route()->uri == 'admin/payments' ? "active" : '' }}">
                         <div class="icon-sm icon shadow border-radius-md text-center d-flex align-items-center justify-content-center  me-2">
-                            <i class="fal fa-info-circle"></i>
+                            <i class="fal fa-money-check-alt"></i>
                         </div>
-                        <span class="nav-link-text ms-1">Support</span>
+                        <span class="nav-link-text ms-1">Payments</span>
                     </a>
                 </li>
+
                 <li class="nav-item">
                     <hr class="horizontal dark" />
                     <h6 class="ps-4  ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Settings</h6>

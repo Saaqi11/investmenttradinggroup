@@ -5,6 +5,8 @@ namespace App\Http;
 use App\Http\Middleware\Authenticate;
 use App\Http\Middleware\CheckAdminUser;
 use App\Http\Middleware\CheckPaymentStatus;
+use App\Http\Middleware\CheckSubscriptionLevel;
+use App\Http\Middleware\CheckUserActive;
 use App\Http\Middleware\EncryptCookies;
 use App\Http\Middleware\PreventRequestsDuringMaintenance;
 use App\Http\Middleware\RedirectIfAuthenticated;
@@ -90,6 +92,7 @@ class Kernel extends HttpKernel
         'throttle' => ThrottleRequests::class,
         'verified' => EnsureEmailIsVerified::class,
         'checkAdmin' => CheckAdminUser::class,
-        'checkPaymentStatus' => CheckPaymentStatus::class
+        'checkPaymentStatus' => CheckPaymentStatus::class,
+        'checkSubscriptionLevel' => CheckSubscriptionLevel::class,
     ];
 }

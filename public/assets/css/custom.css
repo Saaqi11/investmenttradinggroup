@@ -37,7 +37,7 @@
 }
 .send-email-page #attachment{
     width: 100% !important;
-} 
+}
 
 .send-email-page .ck-editor__editable_inline {
   min-height: 200px;
@@ -95,3 +95,173 @@
     padding-left: 15px;
     padding-right: 15px;
 }
+
+.pricing-listings .card-header p{
+    color: #89660b;
+    text-transform: initial;
+    letter-spacing: initial;
+    display: block;
+    position: relative;
+    left: initial;
+    top: initial;
+    text-align: initial;
+    font-size: 14px;
+}
+
+.pricing-listings .card .card-header{
+    border-radius: 15px;;
+}
+.pricing-listings .card .card-header form .pricing-row{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+.pricing-listings .card .card-header form .pricing-row > div{
+    margin: 0 15px;
+}
+@media(min-width: 992px){
+    #pricing-form .tax{
+        padding-left: 50px;
+        border-left: 1px solid #000;
+    }
+}
+@media(min-width: 1440px){
+    .pricing-listings .card .card-header form .pricing-row > div{
+        margin: 0 30px;
+    }
+}
+#pricing-form .pricing label{
+    color: #89660b;
+    font-size: 15px;
+    display: block;
+}
+#pricing-form .pricing input{
+    width: 100px;
+    padding: 3px;
+    -moz-appearance: textfield;
+}
+#pricing-form .pricing input::-webkit-outer-spin-button, #pricing-form .pricing input::-webkit-inner-spin-button{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.admin-primary-btn{
+background-color: #89660b;
+border-color: #89660b;
+color: #fff !important;
+padding: 7px 30px;
+border-radius: 5px;
+    cursor: pointer;
+}
+#pricing-form .pricing-submit-button{
+    display: flex;
+    align-items: flex-end;
+}
+
+.square-btn{
+    padding: 7px 30px;
+    background-color: #a77a23;
+    color: #fff;
+    border-radius: 3px;
+    border: 1px solid #a77a23;
+    transition: 0.3s all;
+}
+.square-btn:hover, .square-btn:active, .square-btn:focus{
+    color: #fff;
+    background-color: #89660b;
+}
+
+ul{
+    padding: 0;
+    margin: 0;
+}
+li{
+    list-style: none;
+}
+.visibility-list-levels input:before,
+.visibility-list-levels input:after{
+    content: none;
+}
+input[type="radio" i] {
+    background-color: initial;
+    cursor: default;
+    appearance: auto;
+    box-sizing: border-box;
+    margin: 3px 3px 0px 5px;
+    padding: initial;
+    border: initial;
+}
+.visibility-list-levels li{
+    margin-right: 2px;
+}
+.visibility-list-levels label {
+    display: inline-block;
+    padding: 10px;
+    margin: 5px;
+    background-color: #89660b;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #fff !important;
+}
+
+.visibility-list-levels input[type="radio"] {
+    display: none;
+}
+
+.visibility-list-levels input[type="radio"]:checked + label {
+    background-color: #664b05;
+    color: #fff;
+}
+.visibility-list-levels{
+    display: flex;
+}
+
+.upgrade-subscription-page{
+    padding: 50px 0;
+    text-align: center;
+}
+.upgrade-subscription-page .upgrade-it{
+    margin: 0 auto;
+    color: #a77a23;
+    padding: 30px;
+    background-color: #eee;
+}
+.upgrade-subscription-page .upgrade-content-holder h2{
+    margin: 0;
+}
+.big-primary-btn{
+    padding: 20px 30px;
+    background-color: #a77a23;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    max-width: 300px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin: 0 auto;
+}
+
+.upgrade-subscription-page .upgrade-content-header{
+    color: #a77a23;
+}
+.upgrade-content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gs-page .numbers p{
+    color: #a77a23;
+    letter-spacing: initial;
+    line-height: initial;
+    display: initial;
+    position: initial;
+    text-align: initial;
+    margin-left: 10px;
+    padding: 0;
+}
+.gs-page .numbers{
+    display: flex;
+
+}
+

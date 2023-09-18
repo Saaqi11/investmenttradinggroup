@@ -1,5 +1,4 @@
 <?php
-
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\AuthController;
@@ -21,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
 Route::get('/get-membership/{subscription}', [PublicController::class, 'getMembership'])->name('get-membership');
+Route::get('/subscriptions', [PublicController::class, 'subscriptions'])->name('subscriptions');
 Route::get('/admin-login', [AuthController::class, 'adminLoginPage'])->name('login');
 Route::get('/user-login', [PublicController::class, 'doLogin'])->name('user-login');
 Route::post('/do-admin-login', [AuthController::class, 'doAdminLogin'])->name('do.login');
@@ -35,7 +35,9 @@ Route::get('send/mail', [EmailController::class, 'sendMail'])->name('sendMail');
 Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->group( function () {
     Route::get('/sales', [AdminController::class, 'sales'])->name('sales');
     Route::get('/coupons', [AdminController::class, 'couponsListing'])->name('coupons');
-    Route::get('/pricing', [AdminController::class, 'paymentListing'])->name('pricing');
+    Route::get('/pricing', [AdminController::class, 'showPricing'])->name('pricing');
+    Route::post('/update-pricing', [AdminController::class, 'updatePricings'])->name('updatePricings');
+    Route::get('/payments', [AdminController::class, 'paymentListing'])->name('payments');
     Route::get('/support', [AdminController::class, 'support'])->name('support');
     Route::get('/register', [AdminController::class, 'register'])->name('register');
     Route::prefix("homepage")->name("homepage.")->group(function () {
@@ -55,10 +57,20 @@ Route::prefix("admin")->name("admin.")->middleware(['auth:web','checkAdmin'])->g
     });
 
     Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+    Route::get('/settings', [AdminController::class, 'settings'])->name('settings');
+
+    Route::prefix("category")->name("category.")->group(function () {
+        Route::get('/show', [AdminController::class, 'showCategories'])->name('showCategories');
+        Route::post('/store', [AdminController::class, 'storeCategory'])->name('storeCategory');
+        Route::post('/fetch-category', [AdminController::class, 'fetchCategory'])->name('fetchCategory');
+    });
+
 });
 Route::prefix("user")->name("user.")->middleware(['auth:web','checkPaymentStatus'])->group( function () {
-    Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
-    Route::get('/re-subscription', [PublicController::class, 'reSubscription'])->name('re-subscription');
+        Route::get('/dashboard', [UserController::class, 'dashboard'])->name('dashboard');
+        Route::get('/re-subscription', [PublicController::class, 'reSubscription'])->name('re-subscription');
+        Route::get('/fetch-data', [UserController::class, 'getCategoryData'])->name('getCategoryData');
 });
 
-
+Route::get('/subscriptions', [PublicController::class, 'subscriptions'])->name('subscriptions');
+Route::get('/upgrade-subscription', [PublicController::class, 'upgradeSubscription'])->name('upgradeSubscription');

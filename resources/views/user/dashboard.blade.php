@@ -1,6 +1,6 @@
 @extends("public-layout.main")
 @section("content")
-      <div class="bg-color">
+      <div class="dashboard settings bg-color">
         <header class="header crypto-header">
             <div class="container">
               <strong class="logo">
@@ -21,12 +21,12 @@
             <div class="field">
               <input type="text" placeholder="Search [Enter]">
             </div>
-            <div class="widget">
+            <div class="fav-list widget">
               <h3>Favorites</h3>
               <ul class="list">
                 <li>
                   <a href="#">
-                    <span class="text">Bitcoin (BTC)</span>
+                    <span class="text" data-text="Bitcoin">Bitcoin (BTC)</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -34,7 +34,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Apple (AAPL)</span>
+                    <span class="text" data-text="Apple">Apple (AAPL)</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -42,7 +42,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">DXY</span>
+                    <span class="text" data-text="DXY">DXY</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -50,7 +50,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Gold Futures</span>
+                    <span class="text" data-text="Gold Futures">Gold Futures</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -58,7 +58,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">S&P 500</span>
+                    <span class="text" data-text="S&P 500">S&P 500</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -66,12 +66,12 @@
                 </li>
               </ul>
             </div>
-            <div class="widget">
+            <div class="other-list widget">
               <h3>Other</h3>
               <ul class="list">
                 <li>
                   <a href="#">
-                    <span class="text">Gold Index</span>
+                    <span class="text" data-text="Gold Index">Gold Index</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -79,7 +79,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Gold Spot</span>
+                    <span class="text" data-text="Gold Spot">Gold Spot</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -87,7 +87,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Silver</span>
+                    <span class="text" data-text="Silver">Silver</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -95,7 +95,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Platinum Spot</span>
+                    <span class="text" data-text="Platinum Spot">Platinum Spot</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -103,7 +103,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Copper Spot</span>
+                    <span class="text" data-text="Copper Spot">Copper Spot</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -111,7 +111,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">VIX Index</span>
+                    <span class="text" data-text="VIX Index">VIX Index</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -119,7 +119,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Palladium</span>
+                    <span class="text" data-text="Palladium">Palladium</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -127,7 +127,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">Brent Oil</span>
+                    <span class="text" data-text="Brent Oil">Brent Oil</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -135,7 +135,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">US 30 Year</span>
+                    <span class="text" data-text="US 30 Year">US 30 Year</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -143,7 +143,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">US 20 Year</span>
+                    <span class="text" data-text="US 20 Year">US 20 Year</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -151,7 +151,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">US 10 Year</span>
+                    <span class="text" data-text="US 10 Year">US 10 Year</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -159,7 +159,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">US 5 Year</span>
+                    <span class="text" data-text="US 5 Year">US 5 Year</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -167,7 +167,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">US 2 Year</span>
+                    <span class="text" data-text="US 2 Year">US 2 Year</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -175,7 +175,7 @@
                 </li>
                 <li>
                   <a href="#">
-                    <span class="text">US 3 Months</span>
+                    <span class="text" data-text="US 3 Months">US 3 Months</span>
                     <span class="icon-heart">
                       <i class="fas fa-heart"></i>
                     </span>
@@ -198,96 +198,6 @@
                 <li class="tab"><a href="{{ route('logout') }}">LOGOUT</a></li>
               </ul>
             </div>
-            <div class="category-block">
-              <div class="three-cols">
-                <div class="description">
-                  <div class="col-wrap">
-                    <div class="spot-coin">
-                      <div class="field field-coin">
-                        <label>Descriotion</label>
-                        <input type="text" placeholder="Vitcoin (BTC)">
-                      </div>
-                      <div class="field field-coin">
-                        <label>Associated search terms</label>
-                        <input type="text" placeholder="BTC, BTCUSDT, BTCUSDC, BTCBUSD, BLX">
-                      </div>
-                    </div>
-                    <div class="spot-coin">
-                      <div class="field">
-                        <label>CATEGORY</label>
-                        <select>
-                          <option value="Crypto">Crypto</option>
-                          <option value="Crypto">Crypto</option>
-                          <option value="Crypto">Crypto</option>
-                        </select>
-                      </div>
-                      <div class="field">
-                        <label>SUB-CATEGORY</label>
-                        <select>
-                          <option value="POW">POW</option>
-                          <option value="POW">POW</option>
-                          <option value="POW">POW</option>
-                        </select>
-                      </div>
-                      <div class="field">
-                        <label>TICKER</label>
-                        <select>
-                          <option value="BTCUSDT">BTCUSDT</option>
-                          <option value="BTCUSDT">BTCUSDT</option>
-                          <option value="BTCUSDT">BTCUSDT</option>
-                        </select>
-                      </div>
-                      <div class="field">
-                        <label>EXCHANGE</label>
-                        <select>
-                          <option value="BINANCE">BINANCE</option>
-                          <option value="BINANCE">BINANCE</option>
-                          <option value="BINANCE">BINANCE</option>
-                        </select>
-                      </div>
-                    </div>
-                  </div>  
-                </div>
-                <div class="amount-graph">
-                  <div class="amount-wrap">
-                    <div class="up-down">
-                      <span class="heading-text">
-                        Up%
-                      </span>
-                      <span class="amount">
-                        100%
-                      </span>
-                    </div>
-                    <div class="up-down">
-                      <span class="heading-text">
-                        Down%
-                      </span>
-                      <span class="amount">
-                        50%
-                      </span>
-                    </div>
-                  </div>
-                  <div class="text-area">
-                    <p>Percentage of the last closing price</p>
-                  </div>
-                </div>
-                <div class="visibility-block">
-                  <div class="grading-wrap">
-                    <span class="text">Visibility L1 .. L4</span>
-                    <ul class="visibility-list">
-                      <li>L1</li>
-                      <li>L2</li>
-                      <li>L3</li>
-                      <li>L4</li>
-                      <li class="hide">Hide</li>
-                    </ul>
-                  </div>
-                  <div class="btn-holder">
-                    <a href="#" class="btn">Save / Update</a>
-                  </div>
-                </div>
-              </div>
-            </div>
             <div class="tabcontent active" style="display: block;" >
               <div class="text-tab crypto">
                 <div class="text-holder">
@@ -295,6 +205,13 @@
                 </div>
               </div>
             </div>
+
+              <div class="show-data-holder">
+                  <div class="cat-content-holder"></div>
+                  <style class="cat-content-style"></style>
+                  <script class="cat-content-js"></script>
+              </div>
+
             <div class="tabcontent" style="display: none;">
               <div class="text-tab">
                 <div class="text-holder">
@@ -334,3 +251,61 @@
         </div>
       </div>
 @endsection
+@push('additional-scripts')
+
+    <script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
+    <script src="{{ asset('assets/js/dashboard.js') }}"></script>
+    <script>
+        $(document).ready(function () {
+                var selectedTab = '';
+                var selectedFavTab = '';
+                var selectedOtherTab = '';
+
+                $('.tabset li.tab').click(function (e) {
+                    e.preventDefault();
+                    selectedTab = $(this).text();
+                    sendAjaxRequest();
+                });
+
+                $('.fav-list a').click(function (e) {
+                    e.preventDefault();
+                    selectedFavTab = $(this).find('span').attr('data-text');
+                    sendAjaxRequest();
+                });
+
+                $('.other-list a').click(function (e) {
+                    e.preventDefault();
+                    selectedOtherTab = $(this).find('span').attr('data-text');
+                    sendAjaxRequest();
+                });
+
+                function sendAjaxRequest() {
+                    $.ajax({
+                        url: '/user/fetch-data',
+                        method: 'GET',
+                        data: {
+                            selectedTab: selectedTab,
+                            selectedFavTab: selectedFavTab,
+                            selectedOtherTab: selectedOtherTab
+                        },
+                        success: function (data) {
+                            if (selectedTab && selectedFavTab && selectedOtherTab && data === "Category not found") {
+                                window.location.href = '/upgrade-subscription'; // Redirect to the "/upgrade-subscription" route
+                            } else if (selectedTab && selectedFavTab && selectedOtherTab && data === "Inactive user") {
+                                window.location.href = '/subscriptions';
+                            }
+                            var htmlData = data.html_data;
+                            var cssData = data.css_data;
+                            var jsData = data.js_data;
+                            $('.cat-content-holder').html(htmlData);
+                            $('.cat-content-style').html(cssData);
+                            $('.cat-content-js').html(jsData);
+                        },
+                        error: function (xhr, status, error) {
+                            console.error(error);
+                        }
+                    });
+                }
+        });
+    </script>
+@endpush
