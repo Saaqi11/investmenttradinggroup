@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\Payment;
+use App\Models\Pricing;
 use App\Models\Subscription;
 use App\Models\User;
+use App\Models\WebsiteSection;
 use Carbon\Carbon;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
@@ -32,7 +34,9 @@ class PublicController extends Controller
      */
     public function index(): View
     {
-        return view('index');
+        $pricings = Pricing::all();
+        $websiteSections = WebsiteSection::all();
+        return view('index', get_defined_vars());
     }
 
     /**
@@ -220,4 +224,20 @@ class PublicController extends Controller
     {
         return \view("re-subscription");
     }
+
+    /**
+     * @return View
+     */
+    public function subscriptions(): View
+    {
+        $pricings = Pricing::all();
+        return view('public-layout.pages.subscription', compact('pricings'));
+    }
+
+    public function upgradeSubscription(): View
+    {
+        $user = User::where("is_active_member", 1)->first();
+        return view('public-layout.pages.upgrade-subscription', compact('user'));
+    }
+
 }

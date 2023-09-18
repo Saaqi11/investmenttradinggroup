@@ -51,6 +51,9 @@
                         </a>
                     </li>
                 @endif
+                <li class="nav-item d-flex align-items-center header-settings-btn">
+                    <a href="{{ route("admin.settings") }}" class="square-btn">Settings</a>
+                </li>
             </ul>
         </div>
     </div>
