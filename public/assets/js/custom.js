@@ -7,6 +7,8 @@ jQuery(document).ready(function (){
 })
 
 $(document).ready(function() {
+    $('.subscription-page .col.active .button a').text('Current Membership')
+    $('.subscription-page .col.active .button a').addClass('disable')
     $('[data-create-date]').each(function() {
         var createDate = $(this).data('create-date');
         var formattedDate = new Date(createDate).toISOString().slice(0, 10);

@@ -11,6 +11,7 @@
                 </button>
             </div>
         @endif
+        @include('public-layout.pages.flashmessages')
         @yield('content')
     </div>
 @include('public-layout.footer')

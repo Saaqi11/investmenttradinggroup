@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [PublicController::class, 'index'])->name('index');
 Route::get('/get-membership/{subscription}', [PublicController::class, 'getMembership'])->name('get-membership');
+Route::get('/upgrade-membership/{subscription}', [PublicController::class, 'upgradeMembership'])->name('upgrade-membership');
 Route::get('/subscriptions', [PublicController::class, 'subscriptions'])->name('subscriptions');
 Route::get('/admin-login', [AuthController::class, 'adminLoginPage'])->name('login');
 Route::get('/user-login', [PublicController::class, 'doLogin'])->name('user-login');

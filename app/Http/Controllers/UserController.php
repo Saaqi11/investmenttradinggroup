@@ -88,7 +88,4 @@ class UserController extends Controller
         return $tabData;
     }
 
-
-
-
 }

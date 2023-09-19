@@ -265,3 +265,11 @@ input[type="radio" i] {
 
 }
 
+.subscription-page .col.active .button a.disable{
+    pointer-events: none;
+    opacity: 0.6;
+}
+.alert.alert-block{
+    max-width: 460px;
+    margin-left: auto;
+}

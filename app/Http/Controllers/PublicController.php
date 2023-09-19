@@ -109,6 +109,33 @@ class PublicController extends Controller
         return redirect()->back();
     }
 
+    public function upgradeMembership (Request $request)
+    {
+        $subscription = $request->input('subscription');
+        $user = auth()->user();
+        if ($user->subscription_avail_date) {
+            $newSubscriptionDate = Carbon::parse($user->subscription_avail_date)->addMonth();
+
+            if ($subscription === 'l1') {
+                $user->subscription_level = 'L1';
+            } elseif ($subscription === 'l2') {
+                $user->subscription_level = 'L2';
+            } elseif ($subscription === 'l3') {
+                $user->subscription_level = 'L3';
+            } elseif ($subscription === 'l4') {
+                $user->subscription_level = 'L4';
+            }
+
+            $user->subscription_avail_date = $newSubscriptionDate;
+
+            $user->save();
+            return redirect()->back()->with('success', 'Your Next Month Subscription would be upgraded.');
+        } else {
+            return redirect()->back()->with('error', 'Invalid subscription_avail_date.');
+        }
+    }
+
+
     /**
      * user Sign up
      * @param Request $request
@@ -231,7 +258,8 @@ class PublicController extends Controller
     public function subscriptions(): View
     {
         $pricings = Pricing::all();
-        return view('public-layout.pages.subscription', compact('pricings'));
+        $user = User::where("is_active_member", 1)->first();
+        return view('public-layout.pages.subscription', compact('pricings', 'user'));
     }
 
     public function upgradeSubscription(): View
